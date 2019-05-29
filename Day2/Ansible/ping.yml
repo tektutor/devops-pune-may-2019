@@ -1,0 +1,5 @@
+- name: This is simple playbook that demonstrates use of ping module
+  hosts: all
+  tasks:
+   - name: Ping container
+     ping:

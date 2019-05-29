@@ -1,0 +1,31 @@
+- name: This playbook will demonstrate installing nginx web server
+  hosts: all
+  become: yes
+  vars:
+     greeting_msg: DevOps!
+     cm_tool: Ansible
+     provisioner_tool: Docker
+#    proxy_configuration:
+#        http_proxy: "http://10.19.16.165:8080"
+#        https_proxy: "http://10.19.16.165:8080"
+
+  tasks:
+    - name: Install nginx web server
+      apt: name=nginx state=latest update_cache=yes
+#      environment: "{{proxy_configuration}}"
+      ignore_errors: true
+
+    - name: Create Document Root Folder
+      file: path=/var/html state=directory mode=777 
+
+    - name: Configure nginx document root folder
+      copy: src=default dest=/etc/nginx/sites-available/default backup=yes
+
+    - name: Deploy our custom html page
+      template: src=index.html.j2 dest=/var/html/index.html 
+
+    - name: Restart the nginx web server via service module
+      service: name=nginx state=restarted
+
+    - name: Restart the nginx web server via command module
+      command: service nginx restart

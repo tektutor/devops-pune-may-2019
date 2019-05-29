@@ -1,0 +1,47 @@
+
+
+ReplicaSet Nginx 1.15			ReplicaSet Nginx 1.16
+
+Initial State
+P1 - ver: 1.15			
+P2 - ver: 1.15
+P3 - ver: 1.15
+P4 - ver: 1.15
+
+Starting Rolling Update to 1.16
+P1 - ver: 1.15				P1 - ver: 1.16	
+P2 - ver: 1.15
+P3 - ver: 1.15
+P4 - ver: 1.15
+
+ReplicaSet will understand there is one extra Pod, hence it will terminate one older Pod
+P1 - ver: 1.15				P1 - ver: 1.16	
+P2 - ver: 1.15
+P3 - ver: 1.15
+
+P1 - ver: 1.15				P1 - ver: 1.16	
+P2 - ver: 1.15				P2 - ver: 1.16
+P3 - ver: 1.15
+
+ReplicaSet will understand there is one extra Pod, hence it will terminate one older Pod
+P1 - ver: 1.15				P1 - ver: 1.16	
+P1 - ver: 1.15				P1 - ver: 1.16	
+
+P2 - ver: 1.15				P1 - ver: 1.16
+P2 - ver: 1.15				P2 - ver: 1.16
+					P3 - ver: 1.16
+
+P2 - ver: 1.15				P1 - ver: 1.16
+					P2 - ver: 1.16
+					P3 - ver: 1.16
+
+
+P2 - ver: 1.15				P1 - ver: 1.16
+					P2 - ver: 1.16
+					P3 - ver: 1.16
+					P4 - ver: 1.16
+
+					P1 - ver: 1.16
+					P2 - ver: 1.16
+					P3 - ver: 1.16
+					P4 - ver: 1.16
