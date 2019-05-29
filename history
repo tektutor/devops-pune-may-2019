@@ -1,0 +1,580 @@
+   1  ls
+    2  hostname
+    3  vim /etc/sysconfig/network
+    4  vim /etc/host
+    5  vim /etc/hosts
+    6  ifconfig ens33
+    7  vim /etc/hosts
+    8  hostnamectl set-hostname tektutor.org
+    9  hostname
+   10  systemctl restart network
+   11  exit
+   12  vim /etc/host
+   13  hostnamectl set-hostname tektutor.org
+   14  hostname
+   15  systemctl restart network
+   16  exit
+   17  hostname
+   18  systemctl restart hostname
+   19  systemctl restart hostnamed
+   20  sysctl kernel.hostname
+   21  wget https://github.com/kubernetes-sigs/kubeadm-dind-cluster/releases/download/v0.1.0/dind-cluster-v1.13.sh
+   22  chmod +x dind-cluster-v1.13.sh
+   23  sudo yum install -y yum-utils   device-mapper-persistent-data   lvm2
+   24  ls
+   25  sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+   26  sudo yum install docker-ce docker-ce-cli containerd.io
+   27  ./dind-cluster-v1.13.sh up
+   28  systemctl enable docker
+   29  systemctl start docker
+   30  ./dind-cluster-v1.13.sh up
+   31  ./dind-cluster-v1.13.sh clean
+   32  ./dind-cluster-v1.13.sh up
+   33  echo "http://127.0.0.1:32768/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy" > dashboard.url
+   34  ls
+   35  export PATH="$HOME/.kubeadm-dind-cluster:$PATH"
+   36  kubectl get nodes
+   37  kubctl create deployment nginx --image=nginx
+   38  kubectl create deployment nginx --image=nginx
+   39  kubectl get dep
+   40  kubectl get deployments
+   41  kubectl get pods
+   42  kubectl get pods --watch
+   43  kubectl get deployments
+   44  kubectl expose deployment nginx --type=NodePort --name=nginx
+   45  kubectl get all
+   46  kubectl expose deployment nginx --port=80 --targetPort=8080 --type=NodePort --name=nginx
+   47  kubectl expose deployment nginx --port=80 --type=NodePort --name=nginx
+   48  kubectl get services
+   49  kubectl get nodes -wide
+   50  kubectl get nodes -w
+   51  kubectl get nodes -o wide
+   52  docker ps
+   53  docker inspect kube-master | grep IPA
+   54  kubectl get services
+   55  curl http://10.192.0.2:30921
+   56  ./dind-cluster-v1.13.sh down
+   57  exit
+   58  ls
+   59  docker --version
+   60  set -ov i
+   61  clear
+   62  set -o vi
+   63  clear
+   64  kubectl get nodes
+   65  export PATH="$HOME/.kubeadm-dind-cluster:$PATH"
+   66  kubectl get nodes
+   67  celar
+   68  clear
+   69  docker --version
+   70  docker images
+   71  ls
+   72  ./dind-cluster-v1.13.sh up
+   73  clear
+   74  docker ps
+   75  kubectl get nodes
+   76  docker ps
+   77  clear
+   78  docker exec -it kube-master bin
+   79  docker exec -it kube-master bash
+   80  clear
+   81  docker ps
+   82  docker exec -it kube-node-1 bash
+   83  clear
+   84  ls
+   85  kubectl get nodes
+   86  kubectl get pods
+   87  kubectl get pods --all
+   88  clear
+   89  kubectl get pods --namespace=all
+   90  clear
+   91  kubectl get pods -n=all
+   92  kubectl get pods -n=kube-system
+   93  kubectl get pods
+   94  kubectl get rs
+   95  kubectl get deployments
+   96  kubectl create deployment nginx --image=nginx
+   97  kubectl get deployments
+   98  kubectl get rs
+   99  kubectl get pods
+  100  kubectl describe pod nginx-5c7588df-zjbb8
+  101  kubectl get pods -o wide
+  102  kubectl edit pod nginx-5c7588df-zjbb8
+  103  kubectl edit deployment nginx
+  104  kubectl get all
+  105  kubectl get all -w
+  106  kubectl get pods -w
+  107  kubectl get pods -o wide
+  108  kubectl delete pod nginx-5c7588df-zjbb8
+  109  kubectl get pods -o wide
+  110  kubectl get rs
+  111  clear
+  112  set -o vi
+  113  kubectl expose deployment nginx --port=80 --type=NodePort --name=nginx
+  114  kubectl get services
+  115  kubectl get nodes
+  116  kubectl get nodes -o wide
+  117  curl http://10.192.0.2:32413
+  118  clear
+  119  curl http://10.192.0.3:32413
+  120  clear
+  121  kubectl get nodes -o wide
+  122  clear
+  123  curl http://10.192.0.4:32413
+  124  kubectl edit deployment nginx
+  125  kubectl get pods -w
+  126  kubectl get podsw
+  127  kubectl get pods
+  128  kubectl get pods -o wide
+  129  kubectl edit deployment nginx
+  130  kubectl get pods -o wide
+  131  curl http://10.192.0.2:32413
+  132  curl http://10.192.0.3:32413
+  133  curl http://10.192.0.4:32413
+  134  kubectl get pods
+  135  kubectl edit pod nginx-5c7588df-v94rn
+  136  kubectl edit deployment nginx
+  137  clear
+  138  kubectl delete deployment nginx
+  139  kubectl get pods
+  140  kubectl get rs
+  141  kubectl get deployments
+  142  kubectl get services
+  143  kubectl delete service nginx
+  144  ./dind-cluster-v1.13.sh down
+  145  exit
+  146  kubectl get pods -w
+  147  set -o vi
+  148  export PATH="$HOME/.kubeadm-dind-cluster:$PATH"
+  149  kubectl get pods -w
+  150  clear
+  151  kubectl get pods
+  152  kubectl get pods -w
+  153  exit
+  154  clear
+  155  ls
+  156  ./dind-cluster-v1.13.sh up
+  157  set -o vi
+  158  export PATH="$HOME/.kubeadm-dind-cluster:$PATH"
+  159  clear
+  160  kubectl get nodes
+  161  clear
+  162  kubectl create deployment --image=nginx --replicas=8
+  163  kubectl create deployment nginx --image=nginx --replicas=8
+  164  clear
+  165  kubectl create deployment nginx --image=nginx --replicas=8
+  166  clear
+  167  kubectl create deployment nginx --image=nginx
+  168  kubectl get deployments
+  169  kubectl get rs
+  170  kubectl get pods
+  171  kubectl get pods -w
+  172  kubectl get all
+  173  clear
+  174  kubectl edit deployment nginx
+  175  kubectl get all
+  176  kubectl get pods
+  177  kubectl get pods -w
+  178  clear
+  179  kubectl get pods
+  180  kubectl get pods -o wide
+  181  cclear
+  182  clear
+  183  kubectl delete pod nginx-5c7588df-6b22s
+  184  kubectl get pods
+  185  kubectl delete pod nginx-5c7588df-8nxv5
+  186  kubectl get pods
+  187  clear
+  188  kubectl get pods
+  189  kubectl delete pods nginx-5c7588df-8kl27 nginx-5c7588df-vqnvq nginx-5c7588df-wthg2 
+  190  kubectl get pods
+  191  clear
+  192  kubectl get rs
+  193  kubectl delete rs nginx-5c7588df
+  194  exit
+  195  ./dind-cluster-v1.13.sh down
+  196  exit
+  197  git status
+  198  git commit -m "Initial commit."
+  199  git status
+  200  ls
+  201  cd ..
+  202  ls
+  203  cd Day3
+  204  git status
+  205  tree
+  206  mkdir -p src/main/java/org/tektutor
+  207  mkdir -p src/test/java/org/tektutor
+  208  tree
+  209  mvn test
+  210  clear
+  211  mvn  help:describe -Dcmd=compile
+  212  clear
+  213  mvn test
+  214  clear
+  215  mvn test
+  216  clear
+  217  ls
+  218  vim /etc/yum.repos.d/vscode.repo
+  219  clear
+  220  ls
+  221  mkdir TDDDemo
+  222  cd TDDDemo/
+  223  mvn --version
+  224  yum install -y maven
+  225  rm -f /var/run/yum.pid
+  226  yum install -y maven
+  227  clear
+  228  mvn --version
+  229  javac --version
+  230  javac -version
+  231  code .
+  232  code . --user-data-dir
+  233  ls
+  234  cd DevOps/Day2/
+  235  cd Ansible
+  236  ls
+  237  set -o vi
+  238  ansible-playbook -i hosts install-nginx.yml 
+  239  vim install-nginx.yml 
+  240  vim hosts 
+  241  ansible-playbook -i hosts install-nginx.yml 
+  242  ls
+  243  vim install-nginx.yml 
+  244  ansible-playbook -i hosts install-nginx.yml 
+  245  vim install-nginx.yml 
+  246  ansible-doc file
+  247  vim install-nginx.yml 
+  248  ansible --version
+  249  vim /usr/lib/python2.7/site-packages/ansible/modules/
+  250  vim 
+  251  cd /usr/lib/python2.7/site-packages/ansible
+  252  find -name template.py
+  253  vim template/template.py
+  254  cd -
+  255  clear
+  256  ls
+  257  vim install-nginx.yml 
+  258  clear
+  259  ls
+  260  vim install-nginx.yml 
+  261  ls
+  262  ansible -i hosts ubuntu1 -m setup
+  263  ansible -i hosts ubuntu1 -m setup | grep nodename
+  264  ansible -i hosts ubuntu2 -m setup | grep nodename
+  265  ansible -i hosts aws -m setup | grep nodename
+  266  ansible-playbook -i hosts install-nginx.yml 
+  267  curl http://172.17.0.2
+  268  curl http://172.17.0.3
+  269  vim install-nginx.yml 
+  270  ansible-playbook -i hosts install-nginx.yml 
+  271  curl http://172.17.0.3
+  272  curl http://172.17.0.2
+  273  curl http://3.83.41.77
+  274  vim index.html.j2 
+  275  clear
+  276  ls
+  277  clear
+  278  ls
+  279  cd ..
+  280  ls
+  281  cd ..
+  282  ls
+  283  cd ..
+  284  ls
+  285  ./dind-cluster-v1.13.sh up
+  286  kubectl get nodes
+  287  export PATH $HOME/.kubeadm-dind-cluster:$PATH
+  288  export PATH=$HOME/.kubeadm-dind-cluster:$PATH
+  289  kubectl get nodes
+  290  docker ps
+  291  clear
+  292  kubectl get pods
+  293  kubectl create deployment nginx --image=nginx
+  294  kubectl get deployments
+  295  kubectl get rs
+  296  kubectl get pods
+  297  kubectl get pods -w
+  298  kubectl get rs
+  299  kubectl describe pod nginx-5c7588df-jr4k5
+  300  kubectl edit deployment nginx
+  301  kubectl get pods -w
+  302  kubectl get pods -o wide
+  303  kubectl get pods -n kube-system
+  304  kubectl delete pod nginx-5c7588df-x8mh9
+  305  kubectl get pods -w
+  306  kubectl get pods -
+  307  kubectl get pods 
+  308  kubectl get rs
+  309  kubectl delete replicaset nginx-5c7588df
+  310  kubectl get rs
+  311  kubectl get pods
+  312  kubect describe pod nginx-5c7588df-dwrx7
+  313  kubectl describe pod nginx-5c7588df-dwrx7
+  314  clear
+  315  kubectl create deployment --help
+  316  kubectl edit deployment nginx
+  317  clear
+  318  ls
+  319  kubectl get pods
+  320  kubectl delete deployment nginx
+  321  kubectl get all
+  322  kubectl create deployment nginx --image=nginx -node=1
+  323  kubectl get nodes -o wide
+  324  kubectl get nodes -o wide --show-labels
+  325  clear
+  326  kubectl get nodes --show-labels
+  327  kubectgl get nodes
+  328  kubectl get nodes
+  329  kubectl create deployment nginx --image=nginx
+  330  kubectl get all
+  331  kubectl edit deployment nginx
+  332  kubectl edit replicaset.apps/nginx-5c7588df
+  333  clear
+  334  ls
+  335  kubectl get pods
+  336  kubectl edit pod nginx-5c7588df-wp9cx
+  337  ls
+  338  cd DevOps/
+  339  ls
+  340  mkdir Day3
+  341  ls
+  342  cd Day3
+  343  ls
+  344  mkdir K8
+  345  cd K8
+  346  ls
+  347  vim pod.ym
+  348  vim pod.yml
+  349  kubect create -f pod.yml 
+  350  kubectl create -f pod.yml 
+  351  kubectl get pods
+  352  kubectl get pods -w
+  353  kubectl get pods
+  354  kubectl get rs
+  355  kubectl delete -f pod.yml 
+  356  kubectl get pods
+  357  kubectl delete pod nginx-5c7588df-wp9cx
+  358  kubectl get pods
+  359  kubectl create -f pod.yml 
+  360  kubectl get pods
+  361  kubectl get rs
+  362  kubectl get pods
+  363  kubectl edit rs nginx-5c7588df
+  364  vim pod.yml 
+  365  kubectl edit rs nginx-5c7588df
+  366  vim pod.yml 
+  367  kubectl get pods
+  368  kubectl create -f pod.yml 
+  369  kubectl apply -f pod.yml 
+  370  kubectl get pods
+  371  kubectl create -f pod.yml 
+  372  kubectl get pods
+  373  vim pod.yml 
+  374  kubectl create -f pod.yml 
+  375  vim pod.yml 
+  376  kubectl get pods
+  377  kubectl get pods -w
+  378  kubectl edit deployment nginx
+  379  ls
+  380  vim pod.yml 
+  381  kubectl apply -f pod.yml 
+  382  kubectl get pods
+  383  vim pod.yml 
+  384  kubectl create -f pod.yml 
+  385  kubectl get pods
+  386  kubectl get pods -w
+  387  kubectl deployment --help
+  388  kubectl deployment scale --help
+  389  kubectl --help
+  390  kubectl scale deployment nginx --replicas=3
+  391  kubectl get pods
+  392  kubectl scale deployment nginx --replicas=1
+  393  kubectl get pods
+  394  kubect edit deployment nginx
+  395  kubectl edit deployment nginx
+  396  kubectl get pods
+  397  kubectl delete pod nginx
+  398  kubectl get deployments
+  399  kubectl get rs
+  400  kubectl get pods
+  401  kubectl exec -it nginx-5c7588df-4nr5z bash
+  402  kubectl logs pod nginx-5c7588df-4nr5z
+  403  kubectl logs nginx-5c7588df-4nr5z
+  404  kubectl logs pod/nginx-5c7588df-4nr5z
+  405  kubectl logs
+  406  kubectl logs -h
+  407  :q
+  408    kubectl logs nginx --all-containers=true
+  409  kubectl logs nginx --all-containers=true
+  410  kubectl get pods
+  411  kubectl logs nginx-5c7588df-4nr5z --all-containers=true
+  412  kubectl logs deployment/nginx
+  413  ls
+  414  kubectl describe deployment/nginx
+  415  kubectl delete deployment nginx
+  416  set -o vi
+  417  kubectl create deployment nginx --image=nginx1
+  418  kubectl get deployment
+  419  kubectl get rs
+  420  kubectl get pods
+  421  kubectl log pod/nginx-58ccfdc445-7pjlr
+  422  kubectl logs pod/nginx-58ccfdc445-7pjlr
+  423  docker pull nginx1
+  424  docker pull nginx
+  425  kubectl edit deployment nginx
+  426  kubectl get pods -w
+  427  kubectl get pods
+  428  kubectl edit deployment nginx
+  429  clear
+  430  kubectl get nodes
+  431  docker ps
+  432  kubectl describe node kube-node-1
+  433  kubectl describe node kube-master
+  434  clear
+  435  docker exec -it kube-master bash
+  436  docker exec -it kube-node-1 bash
+  437  clear
+  438  ls
+  439  kubectl logs deployment/nginx
+  440  kubectl get rs
+  441  kubectl logs rs/nginx-58ccfdc445
+  442  kubectl logs replicaset/nginx-58ccfdc445
+  443  kubectl get pods
+  444  kubectl logs pods/nginx-6645fc48f6-snvpt
+  445  clear
+  446  ls
+  447  kubectl get deployment
+  448  kubectl expose deployment nginx --type=NodePort --containerPort=80
+  449  kubectl expose deployment nginx --type=NodePort --port=80
+  450  kubectl get svc
+  451  kubectl get nodes -o w
+  452  kubectl get nodes -o wide
+  453  curl http://10.192.0.2:32082
+  454  kubectl get pods -o wide
+  455  curl http://10.192.0.3:32082
+  456  curl http://10.192.0.4:32082
+  457  docker inspect kube-master | grep IPA
+  458  clear
+  459  ls
+  460  vim deployment.yml
+  461  kubectl edit deployment/nginx
+  462  clear
+  463  kubectl delete deployment nginx
+  464  kubectl get all
+  465  kubectl delete service nginx
+  466  kubectl get svc
+  467  kubectl get all
+  468  vim deployment.y l
+  469  vim deployment.yml
+  470  kubectl create -f deployment.yml 
+  471  kubectl get deployments
+  472  kubectl get rs
+  473  kubectl get pods
+  474  vim deployment.yml 
+  475  kubectl apply -f deployment.yml 
+  476  kubectl apply -f deployment.yml deployment.extensions/nginx 
+  477  kubectl apply -f deployment.yml deployment/nginx 
+  478  kubectl delete deployment/nginx
+  479  kubectl create -f deployment.yml --save-config
+  480  kubectl get deployments
+  481  kubectl get pods
+  482  kubectl get pods -w
+  483  vim deployment.yml 
+  484  kubectl apply -f deployment.yml
+  485  kubectl get pods
+  486  vim deployment.yml 
+  487  kubectl apply -f deployment.yml
+  488  kubectl get pods
+  489  kubectl get pods -w
+  490  kubectl get pods
+  491  vim deployment.yml 
+  492  kubectl get pods
+  493  kubectl apply -f deployment.yml
+  494  kubectl get pods -w
+  495  kubectl get pods 
+  496  kubectl delete -f deployment.yml 
+  497  kubectl get deployments
+  498  kubectl get pods
+  499  vim deployment.yml 
+  500  kubectl create -f deployment.yml --save-config
+  501  kubectl get pods
+  502  kubectl get pods -w
+  503  kubectl get pods 
+  504  kubectl pod
+  505  kubectl
+  506  kubectl rollout deployment nginx --image=nginx:1.16
+  507  clear
+  508  vim deployment.yml 
+  509  vim notest
+  510  kubectl get pods
+  511  kubectl get pods --show-labels
+  512  kubectl edit deployment.yml 
+  513  clear
+  514  kubectl rollout deployment/nginx set image=nginx:1.16
+  515  kubectl rollout -h
+  516  kubectl 
+  517  kubectl rollout -h
+  518  vim deployment.yml 
+  519  kubectl apply -f deployment.yml 
+  520  kubectl rollout status
+  521  kubectl rollout deployment/nginx status
+  522  kubectl rollout status deployment/nginx
+  523  kubectl rollout history deployment/nginx
+  524  kubectl edit deployment/nginx
+  525  kubectl describe deployment/nginx
+  526  kubectl svc 
+  527  kubectl get svc 
+  528  clear
+  529  ls
+  530  cd ..
+  531  ls
+  532  cd ..
+  533  ls
+  534  cd ..
+  535  ls
+  536  ./dind-cluster-v1.13.sh down
+  537  cat dashboard.url 
+  538  ./dind-cluster-v1.13.sh up
+  539  history
+  540  ls
+  541  cd DevOps/
+  542  ls
+  543  cd 
+  544  cd DevOps/
+  545  ls
+  546  git init
+  547  git add *
+  548  git status
+  549  git rm --cached *
+  550  git rm --cached * -r
+  551  clear
+  552  git status
+  553  cd Day2
+  554  cd Ansible
+  555  ls
+  556  cd ..
+  557  ls
+  558  cd Ansible
+  559  cd ..
+  560  cd AnsibleCustomImage/
+  561  lsw
+  562  ls
+  563  cd ubuntu-ansible/
+  564  ls
+  565  rm -rf .git
+  566  ls
+  567  cat not
+  568  ls
+  569  mv not notes1.txt
+  570  mv notes notes2.txt
+  571  ls
+  572  cd ..
+  573  ls
+  574  cd ..
+  575  git add *
+  576  git status
+  577  git commit -m "Initial commit."
+  578  vim hitory
+  579  git remote add origin https://github.com/tektutor/devops-pune-may-2019.git
+
